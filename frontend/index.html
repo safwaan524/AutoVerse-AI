@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111214">
+    <meta name="description" content="Explore India's automotive market with AutoVerse AI.">
+    <title>AutoVerse AI — Discover Your Next Drive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand-lockup" href="#dashboard" aria-label="AutoVerse AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none"><path d="M5 24.5 9.4 14a4 4 0 0 1 3.7-2.5h9.8a4 4 0 0 1 3.7 2.5L31 24.5v5h-3.5v-3H8.5v3H5v-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 19h18M11.5 14.5l-2 4.5m15-4.5 2 4.5M11 23h.1m14 0h.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M18 5v4m-2-2h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">AUTO<span>VERSE</span><small>INTELLIGENCE</small></span>
+        </a>
+
+        <div class="nav-caption">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-item" href="#dashboard" data-page-link="dashboard">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+            <span>Dashboard</span>
+          </a>
+          <a class="nav-item" href="#explore" data-page-link="explore">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            <span>Explore cars</span>
+          </a>
+          <a class="nav-item nav-upcoming" href="#compare" data-page-link="compare">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20h5a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 10.5 4H8Zm8 0h2.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-5a1.5 1.5 0 0 1-1.5-1.5"/><path d="M7 8h2m-2 4h2m-2 4h2m7-8h2m-2 4h2m-2 4h2"/></svg>
+            <span>Compare</span><span class="nav-tag">PHASE 4</span>
+          </a>
+          <a class="nav-item nav-upcoming" href="#assistant" data-page-link="assistant">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a7.5 7.5 0 0 0-4.5 13.5V20h9v-3A7.5 7.5 0 0 0 12 3.5Z"/><path d="M9.5 20h5m-6-9.5 2.2 2.2 4.8-4.8"/></svg>
+            <span>AI assistant</span><span class="nav-tag">PHASE 4</span>
+          </a>
+          <a class="nav-item nav-upcoming" href="#garage" data-page-link="garage">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 8 4.2v8.6l-8 4.2-8-4.2V7.7l8-4.2Z"/><path d="m4.5 7.9 7.5 4 7.5-4M12 12v8.2"/></svg>
+            <span>3D garage</span><span class="nav-tag">PHASE 6</span>
+          </a>
+          <a class="nav-item nav-upcoming" href="#analytics" data-page-link="analytics">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10m5 10V4m5 16v-7m5 7V7"/></svg>
+            <span>Analytics</span><span class="nav-tag">PHASE 5</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="api-status">
+            <span class="status-light" id="status-light"></span>
+            <span><strong id="api-status-label">Connecting to AutoVerse</strong><small id="api-status-detail">Checking your local data engine</small></span>
+          </div>
+          <div class="sidebar-footer"><span>BUILT FOR THE DRIVE</span><span>v2.0</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Open navigation" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Dashboard</strong></div>
+          <div class="topbar-right">
+            <span class="market-indicator"><i></i> INDIA MARKET</span>
+            <span class="topbar-divider"></span>
+            <button class="avatar-button" type="button" aria-label="Account">A</button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="hero-panel" aria-labelledby="hero-title">
+            <div class="hero-grid"></div>
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="eyebrow-line"></span> A NEW WAY TO FIND YOUR DRIVE</div>
+              <h1 id="hero-title">Discover<br>Your <em>Next Drive</em></h1>
+              <p>Every road leads somewhere. Find the car that takes you there — with intelligence built around you.</p>
+              <a class="hero-cta" href="#explore">Explore the collection <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="art-glow"></div>
+              <div class="art-orbit orbit-one"></div>
+              <div class="art-orbit orbit-two"></div>
+              <svg class="hero-car" viewBox="0 0 780 330" fill="none">
+                <defs>
+                  <linearGradient id="carBody" x1="139" y1="97" x2="619" y2="285" gradientUnits="userSpaceOnUse"><stop stop-color="#D9DBDC"/><stop offset=".33" stop-color="#777B80"/><stop offset=".68" stop-color="#35393E"/><stop offset="1" stop-color="#B0B4B7"/></linearGradient>
+                  <linearGradient id="window" x1="340" y1="95" x2="487" y2="201" gradientUnits="userSpaceOnUse"><stop stop-color="#515A62"/><stop offset="1" stop-color="#171B1F"/></linearGradient>
+                  <linearGradient id="under" x1="127" y1="266" x2="647" y2="266" gradientUnits="userSpaceOnUse"><stop stop-color="#F27835" stop-opacity="0"/><stop offset=".5" stop-color="#FF8C4B" stop-opacity=".85"/><stop offset="1" stop-color="#F27835" stop-opacity="0"/></linearGradient>
+                </defs>
+                <ellipse cx="388" cy="281" rx="273" ry="15" fill="url(#under)" opacity=".8"/>
+                <path d="m147 224 18-61c5-18 17-31 34-40l96-49c18-9 38-14 58-14h102c29 0 56 12 76 33l65 68 45 19c13 5 21 18 21 32v27c0 12-10 22-22 22H155c-12 0-22-10-22-22v-5c0-5 5-10 14-10Z" fill="url(#carBody)" stroke="#D7D9DB" stroke-opacity=".48" stroke-width="2"/>
+                <path d="m319 89-99 51c-9 5-16 13-19 23l-11 38h151V89h-22Zm38 0v112h185l-58-62c-14-15-34-23-54-23H357Z" fill="url(#window)" stroke="#AEB3B8" stroke-opacity=".35" stroke-width="2"/>
+                <path d="m167 199 73 1m177 0h112" stroke="#ECEEEF" stroke-opacity=".55" stroke-width="2"/>
+                <path d="M142 221c25 5 46 7 69 7h325c42 0 77-3 120-15" stroke="#FF8750" stroke-width="3" stroke-linecap="round"/>
+                <path d="m153 207 57-1m406-14 36 14" stroke="#F8F9FA" stroke-width="5" stroke-linecap="round"/>
+                <path d="m169 221 24-1m435-21 25 6" stroke="#FF8F56" stroke-width="4" stroke-linecap="round"/>
+                <path d="m340 90-7 111m171-89 2 89" stroke="#AEB3B8" stroke-opacity=".35" stroke-width="2"/>
+                <circle cx="237" cy="249" r="39" fill="#17191C" stroke="#81868B" stroke-width="4"/>
+                <circle cx="237" cy="249" r="23" fill="#383C40" stroke="#C1C4C7" stroke-width="2"/>
+                <circle cx="237" cy="249" r="7" fill="#B9BDC0"/>
+                <path d="m237 226 0 46m-23-23h46m-39-16 32 32m0-32-32 32" stroke="#989DA2" stroke-width="2"/>
+                <circle cx="559" cy="249" r="39" fill="#17191C" stroke="#81868B" stroke-width="4"/>
+                <circle cx="559" cy="249" r="23" fill="#383C40" stroke="#C1C4C7" stroke-width="2"/>
+                <circle cx="559" cy="249" r="7" fill="#B9BDC0"/>
+                <path d="m559 226 0 46m-23-23h46m-39-16 32 32m0-32-32 32" stroke="#989DA2" stroke-width="2"/>
+                <path d="M403 119h41" stroke="#FCFCFC" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <div class="art-label"><span>01</span><i></i> MADE FOR THE MILES AHEAD</div>
+              <div class="art-coordinate">19°04' N<br>72°52' E</div>
+            </div>
+            <div class="hero-index"><span>01</span><span class="index-track"><i></i></span><span>03</span></div>
+          </section>
+
+          <section class="page-view" data-page-view="dashboard">
+          <section class="search-section" id="vehicle-search-section" aria-label="Search vehicles">
+            <div class="section-kicker">YOUR SEARCH STARTS HERE</div>
+            <form class="search-bar" id="search-form">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+              <label class="sr-only" for="vehicle-search">Search by make, model, or fuel type</label>
+              <input id="vehicle-search" name="query" type="search" placeholder="Search by make, model, or fuel type..." autocomplete="off">
+              <span class="search-shortcut">↵</span>
+              <button class="search-submit" type="submit">Find my car <span aria-hidden="true">↗</span></button>
+            </form>
+            <div class="search-meta">
+              <div class="quick-filters" aria-label="Quick filters">
+                <span>POPULAR:</span>
+                <button type="button" data-search-filter="vehicle_type" data-search-value="New">New cars</button>
+                <button type="button" data-search-filter="fuel_type" data-search-value="Electric">Electric</button>
+                <button type="button" data-search-filter="brand" data-search-value="Maruti Suzuki">Maruti Suzuki</button>
+                <button type="button" data-search-filter="fuel_type" data-search-value="Diesel">Diesel</button>
+              </div>
+              <span class="search-hint">REAL DATA. BETTER DECISIONS.</span>
+            </div>
+          </section>
+
+          <section class="section-block featured-section" aria-labelledby="featured-title">
+            <div class="section-heading">
+              <div>
+                <div class="section-kicker">SELECTED FOR THE ROAD</div>
+                <h2 id="featured-title">Featured <span>vehicles</span></h2>
+              </div>
+              <a class="text-link" href="#explore">Explore all cars <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="result-notice" id="result-notice" role="status" aria-live="polite"></div>
+            <div class="vehicle-grid" id="vehicle-grid" aria-live="polite">
+              <div class="loading-card"><span class="spinner"></span> Loading vehicles from AutoVerse...</div>
+            </div>
+          </section>
+
+          <section class="stats-strip" aria-label="Database statistics">
+            <div class="stats-intro">
+              <div class="section-kicker">INTELLIGENCE, GROUNDED</div>
+              <p>Decisions backed by<br><strong>real market data.</strong></p>
+            </div>
+            <div class="stat-item"><span class="stat-icon">◈</span><div><strong id="stat-records">—</strong><small>VERIFIED DATA RECORDS</small></div></div>
+            <div class="stat-item"><span class="stat-icon">▦</span><div><strong id="stat-tables">—</strong><small>CONNECTED DATA TABLES</small></div></div>
+            <div class="stat-item"><span class="stat-icon stat-live"><i></i></span><div><strong id="stat-engine">—</strong><small>LOCAL AI ENGINE</small></div></div>
+          </section>
+
+          <section class="section-block intelligence-section" id="recommendations" aria-labelledby="recommendations-title">
+            <div class="section-heading recommendation-heading">
+              <div>
+                <div class="section-kicker">A LITTLE HELP FINDING THE ONE</div>
+                <h2 id="recommendations-title">Your next car,<br><span>thoughtfully chosen.</span></h2>
+                <p class="section-description">Tell us what matters. AutoVerse will match your brief against real vehicle data and explain the fit.</p>
+              </div>
+              <div class="recommendation-badge"><span>✳</span> INTELLIGENCE THAT GETS YOU</div>
+            </div>
+            <form class="recommendation-form" id="recommendation-form">
+              <label class="budget-field" for="budget-input">
+                <span>YOUR MAXIMUM BUDGET</span>
+                <span class="budget-input-wrap"><span>₹</span><input id="budget-input" type="number" min="100000" max="1000000000" step="100000" value="1500000" required><small>INR</small></span>
+              </label>
+              <label class="fuel-field" for="fuel-select">
+                <span>FUEL PREFERENCE</span>
+                <select id="fuel-select">
+                  <option>Any</option><option>Petrol</option><option>Diesel</option><option>CNG</option><option>Electric</option>
+                </select>
+              </label>
+              <button class="recommend-button" type="submit" id="recommend-button">Find my match <span aria-hidden="true">↗</span></button>
+            </form>
+            <div class="recommendation-results" id="recommendation-results" aria-live="polite"></div>
+          </section>
+
+          <section class="section-block recent-section" aria-labelledby="recent-title">
+            <div class="section-heading recent-heading">
+              <div>
+                <div class="section-kicker">PICK UP WHERE YOU LEFT OFF</div>
+                <h2 id="recent-title">Recently <span>explored</span></h2>
+              </div>
+              <button class="clear-recent" type="button" id="clear-recent">Clear history</button>
+            </div>
+            <div class="recent-list" id="recent-list">
+              <div class="empty-recent"><span>◷</span><p>Your recently explored vehicles will appear here.</p><a href="#explore">Start exploring <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </section>
+
+          <footer class="page-footer">
+            <a class="footer-brand" href="#dashboard">AUTO<span>VERSE</span></a>
+            <span>Automotive intelligence, with you in mind.</span>
+            <span>INDIA <i>·</i> DRIVE CURIOUS</span>
+          </footer>
+          </section>
+
+          <section class="page-view module-placeholder" data-page-view="explore" hidden>
+            <div class="placeholder-eyebrow">MODULE ROADMAP <span>·</span> PHASE 3</div>
+            <div class="placeholder-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            </div>
+            <h1>Explore <span>Cars</span></h1>
+            <p>The vehicle explorer is planned for Phase 3. It will use the verified search filters and vehicle records returned by AutoVerse’s existing API.</p>
+            <a class="placeholder-cta" href="#dashboard">Return to dashboard <span aria-hidden="true">↗</span></a>
+          </section>
+
+          <section class="page-view module-placeholder" data-page-view="compare" hidden>
+            <div class="placeholder-eyebrow">MODULE ROADMAP <span>·</span> PHASE 4</div>
+            <div class="placeholder-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20h5a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 10.5 4H8Zm8 0h2.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-5a1.5 1.5 0 0 1-1.5-1.5"/><path d="M7 8h2m-2 4h2m-2 4h2m7-8h2m-2 4h2m-2 4h2"/></svg>
+            </div>
+            <h1>Vehicle <span>Comparison</span></h1>
+            <p>This module will compare verified vehicle data and the analysis returned by the existing comparison API.</p>
+            <a class="placeholder-cta" href="#dashboard">Return to dashboard <span aria-hidden="true">↗</span></a>
+          </section>
+
+          <section class="page-view module-placeholder" data-page-view="assistant" hidden>
+            <div class="placeholder-eyebrow">MODULE ROADMAP <span>·</span> PHASE 4</div>
+            <div class="placeholder-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3.5a7.5 7.5 0 0 0-4.5 13.5V20h9v-3A7.5 7.5 0 0 0 12 3.5Z"/><path d="M9.5 20h5m-6-9.5 2.2 2.2 4.8-4.8"/></svg>
+            </div>
+            <h1>AI <span>Assistant</span></h1>
+            <p>The assistant will connect to the existing RAG-backed chat API. Conversation history and retrieved facts will be handled in that phase.</p>
+            <a class="placeholder-cta" href="#dashboard">Return to dashboard <span aria-hidden="true">↗</span></a>
+          </section>
+
+          <section class="page-view module-placeholder" data-page-view="garage" hidden>
+            <div class="placeholder-eyebrow">MODULE ROADMAP <span>·</span> PHASE 6</div>
+            <div class="placeholder-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m12 3.5 8 4.2v8.6l-8 4.2-8-4.2V7.7l8-4.2Z"/><path d="m4.5 7.9 7.5 4 7.5-4M12 12v8.2"/></svg>
+            </div>
+            <h1>3D <span>Garage</span></h1>
+            <p>No GLB, GLTF, or OBJ vehicle models were found in the frontend assets. The future viewer will be clearly marked as a demonstration until accurate component-level models are available.</p>
+            <a class="placeholder-cta" href="#dashboard">Return to dashboard <span aria-hidden="true">↗</span></a>
+          </section>
+
+          <section class="page-view module-placeholder" data-page-view="analytics" hidden>
+            <div class="placeholder-eyebrow">MODULE ROADMAP <span>·</span> PHASE 5</div>
+            <div class="placeholder-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V4m5 16v-7m5 7V7"/></svg>
+            </div>
+            <h1>Market <span>Analytics</span></h1>
+            <p>Interactive market charts will be built from real datasets returned by AutoVerse’s existing analytics endpoint.</p>
+            <a class="placeholder-cta" href="#dashboard">Return to dashboard <span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+      </main>
+    </div>
+    <dialog class="vehicle-dialog" id="vehicle-dialog" aria-labelledby="dialog-title">
+      <form method="dialog"><button class="dialog-close" aria-label="Close vehicle details">×</button></form>
+      <div class="dialog-kicker">AUTOVERSE VEHICLE PROFILE</div>
+      <h2 id="dialog-title">Vehicle details</h2>
+      <div class="dialog-body" id="dialog-body"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

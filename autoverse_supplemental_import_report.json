@@ -1,0 +1,251 @@
+{
+  "run_id": 4,
+  "status": "completed",
+  "started_at": "2026-11-17T06:51:53+00:00",
+  "completed_at": "2026-11-17T06:51:54+00:00",
+  "database": "/Users/safwaan_siddiqi/Desktop/autoverse-ai/autoverse_supplemental.db",
+  "raw_directory": "/Users/safwaan_siddiqi/Desktop/autoverse-ai/AutoVerse_Supplemental_Datasets/raw",
+  "files_expected": 13,
+  "files_imported": 13,
+  "rows_read": 8783,
+  "car_spec_deduplication": {
+    "source_rows": 2543,
+    "canonical_rows": 1329,
+    "duplicate_rows": 1214
+  },
+  "used_listing_deduplication": {
+    "primary_source_rows": 1725,
+    "canonical_rows": 1300,
+    "duplicate_rows": 425,
+    "score_rows": 1725,
+    "linked_score_rows": 1725,
+    "unmatched_city_reference_rows": 0,
+    "city_sources": {
+      "UsedCars_Combined.csv": {
+        "rows": 1725,
+        "expected_city": null,
+        "actual_city_counts": {
+          "Mumbai": 165,
+          "Thane": 48,
+          "Dehradun": 56,
+          "Navi Mumbai": 5,
+          "Delhi": 187,
+          "Noida": 12,
+          "Ghaziabad": 10,
+          "Panchkula": 1,
+          "Faridabad": 2,
+          "Agra": 1,
+          "Lucknow": 6,
+          "Bangalore": 247,
+          "Hyderabad": 245,
+          "Chennai": 493,
+          "Pune": 247
+        },
+        "filename_city_mismatch_rows": 0,
+        "matched_primary_rows": 0
+      },
+      "UsedCars_Banglore.csv": {
+        "rows": 247,
+        "expected_city": "Bangalore",
+        "actual_city_counts": {
+          "Bangalore": 247
+        },
+        "filename_city_mismatch_rows": 0,
+        "matched_primary_rows": 247
+      },
+      "UsedCars_Chennai.csv": {
+        "rows": 246,
+        "expected_city": "Chennai",
+        "actual_city_counts": {
+          "Chennai": 246
+        },
+        "filename_city_mismatch_rows": 0,
+        "matched_primary_rows": 246
+      },
+      "UsedCars_Delhi.csv": {
+        "rows": 246,
+        "expected_city": "Delhi",
+        "actual_city_counts": {
+          "Delhi": 187,
+          "Noida": 12,
+          "Ghaziabad": 10,
+          "Panchkula": 1,
+          "Dehradun": 27,
+          "Faridabad": 2,
+          "Agra": 1,
+          "Lucknow": 6
+        },
+        "filename_city_mismatch_rows": 59,
+        "matched_primary_rows": 246
+      },
+      "UsedCars_Hyderabad.csv": {
+        "rows": 245,
+        "expected_city": "Hyderabad",
+        "actual_city_counts": {
+          "Hyderabad": 245
+        },
+        "filename_city_mismatch_rows": 0,
+        "matched_primary_rows": 245
+      },
+      "UsedCars_Kolkata.csv": {
+        "rows": 247,
+        "expected_city": "Kolkata",
+        "actual_city_counts": {
+          "Chennai": 247
+        },
+        "filename_city_mismatch_rows": 247,
+        "matched_primary_rows": 247
+      },
+      "UsedCars_Mumbai.csv": {
+        "rows": 247,
+        "expected_city": "Mumbai",
+        "actual_city_counts": {
+          "Mumbai": 165,
+          "Thane": 48,
+          "Dehradun": 29,
+          "Navi Mumbai": 5
+        },
+        "filename_city_mismatch_rows": 82,
+        "matched_primary_rows": 247
+      },
+      "UsedCars_Pune.csv": {
+        "rows": 247,
+        "expected_city": "Pune",
+        "actual_city_counts": {
+          "Pune": 247
+        },
+        "filename_city_mismatch_rows": 0,
+        "matched_primary_rows": 247
+      }
+    }
+  },
+  "structured_catalog_rows": {
+    "structured_car_data_cleaned.json": 504,
+    "structured_bike_data_cleaned.json": 561
+  },
+  "quality_issues_this_run": {
+    "by_severity": {
+      "warning": 1727,
+      "info": 347,
+      "error": 247
+    },
+    "by_code": {
+      "required_value_missing": 150,
+      "conflicting_duplicate_car_spec": 1158,
+      "car_identity_blank": 150,
+      "duplicate_used_listing": 347,
+      "filename_city_mismatch": 141,
+      "known_kolkata_city_label_mismatch": 247,
+      "numeric_parse_failed": 128
+    }
+  },
+  "table_counts": {
+    "source_files": 13,
+    "supplemental_car_specs": 1329,
+    "supplemental_car_spec_sources": 2543,
+    "supplemental_used_listings": 1300,
+    "supplemental_used_listing_sources": 3450,
+    "supplemental_used_listing_scores": 1725,
+    "supplemental_structured_car_catalog": 504,
+    "supplemental_structured_bike_catalog": 561,
+    "data_quality_issues": 2321
+  },
+  "city_attribution_audit": {
+    "UsedCars_Combined.csv": {
+      "rows": 1725,
+      "expected_city": null,
+      "actual_city_counts": {
+        "Mumbai": 165,
+        "Thane": 48,
+        "Dehradun": 56,
+        "Navi Mumbai": 5,
+        "Delhi": 187,
+        "Noida": 12,
+        "Ghaziabad": 10,
+        "Panchkula": 1,
+        "Faridabad": 2,
+        "Agra": 1,
+        "Lucknow": 6,
+        "Bangalore": 247,
+        "Hyderabad": 245,
+        "Chennai": 493,
+        "Pune": 247
+      },
+      "filename_city_mismatch_rows": 0,
+      "matched_primary_rows": 0
+    },
+    "UsedCars_Banglore.csv": {
+      "rows": 247,
+      "expected_city": "Bangalore",
+      "actual_city_counts": {
+        "Bangalore": 247
+      },
+      "filename_city_mismatch_rows": 0,
+      "matched_primary_rows": 247
+    },
+    "UsedCars_Chennai.csv": {
+      "rows": 246,
+      "expected_city": "Chennai",
+      "actual_city_counts": {
+        "Chennai": 246
+      },
+      "filename_city_mismatch_rows": 0,
+      "matched_primary_rows": 246
+    },
+    "UsedCars_Delhi.csv": {
+      "rows": 246,
+      "expected_city": "Delhi",
+      "actual_city_counts": {
+        "Delhi": 187,
+        "Noida": 12,
+        "Ghaziabad": 10,
+        "Panchkula": 1,
+        "Dehradun": 27,
+        "Faridabad": 2,
+        "Agra": 1,
+        "Lucknow": 6
+      },
+      "filename_city_mismatch_rows": 59,
+      "matched_primary_rows": 246
+    },
+    "UsedCars_Hyderabad.csv": {
+      "rows": 245,
+      "expected_city": "Hyderabad",
+      "actual_city_counts": {
+        "Hyderabad": 245
+      },
+      "filename_city_mismatch_rows": 0,
+      "matched_primary_rows": 245
+    },
+    "UsedCars_Kolkata.csv": {
+      "rows": 247,
+      "expected_city": "Kolkata",
+      "actual_city_counts": {
+        "Chennai": 247
+      },
+      "filename_city_mismatch_rows": 247,
+      "matched_primary_rows": 247
+    },
+    "UsedCars_Mumbai.csv": {
+      "rows": 247,
+      "expected_city": "Mumbai",
+      "actual_city_counts": {
+        "Mumbai": 165,
+        "Thane": 48,
+        "Dehradun": 29,
+        "Navi Mumbai": 5
+      },
+      "filename_city_mismatch_rows": 82,
+      "matched_primary_rows": 247
+    },
+    "UsedCars_Pune.csv": {
+      "rows": 247,
+      "expected_city": "Pune",
+      "actual_city_counts": {
+        "Pune": 247
+      },
+      "filename_city_mismatch_rows": 0,
+      "matched_primary_rows": 247
+    }
+  }
+}
